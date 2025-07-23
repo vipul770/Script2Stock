@@ -29,7 +29,7 @@ def download_video(query, save_path='downloads/videos'):
             filename = os.path.join(save_path, f"{query.replace(' ', '_')}.mp4")
             with open(filename, 'wb') as f:
                 f.write(requests.get(url).content)
-            print(f"✅ Video saved: {filename}")
+            print(f"Video saved: {filename}")
         else:
             print(f"No video found for: {query}")
     else:
@@ -56,7 +56,7 @@ def download_image(query, save_path='downloads/images'):
 def process_script(script):
     lines = [line.strip() for line in script.strip().split('\n') if line.strip()]
     for line in lines:
-        print(f"\n🔍 Searching for: {line}")
+        print(f"\nSearching for: {line}")
         download_video(line)
         download_image(line)
 
